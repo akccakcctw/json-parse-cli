@@ -10,6 +10,7 @@ const cli = meow(`
 
   Options
     -h, --help
+    -v, --version
     -i, --indent
     -f, --format object(default) or json
 
@@ -23,7 +24,10 @@ const cli = meow(`
     help: {
       type: 'boolean',
       alias: 'h',
-      default: false,
+    },
+    version: {
+      type: 'boolean',
+      alias: 'v',
     },
     indent: {
       type: 'number',
@@ -38,7 +42,7 @@ const cli = meow(`
   },
 });
 
-const input = cli.input[0];
+const filePath = cli.input[0];
 const { flags } = cli;
 
 const replacer = (key, val) => {
@@ -59,11 +63,10 @@ const parseFromFile = async ({ file = '' }) => {
 };
 
 if(process.stdin.isTTY) {
-  if(!input) {
-    console.error('Specify a filepath');
-    process.exit(1);
+  if(!filePath) {
+    cli.showHelp();
   }
-  parseFromFile({ file: input, })
+  parseFromFile({ file: filePath })
     .then(data => {
       if(flags.format === 'json') {
         console.log(JSON.stringify(data, replacer, flags.indent));
