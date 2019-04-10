@@ -2,20 +2,24 @@
   "name": "json-parse-cli",
   "version": "0.2.0",
   "description": "parse JSON file more easily",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "JSON"
-  ],
   "author": "RexTsou <akccakccwww@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "json",
+    "cli",
+    "utility",
+    "parse"
+  ],
   "bin": {
     "json-parse": "cli.js"
   },
   "files": [
     "cli.js"
   ],
-  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "akccakcctw/json-parse-cli",
   "dependencies": {
     "get-stdin": "^6.0.0",
     "meow": "^5.0.0"
