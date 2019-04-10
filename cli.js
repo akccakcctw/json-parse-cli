@@ -3,9 +3,25 @@
 const fs = require('fs');
 const stdin = require('get-stdin');
 const meow = require('meow');
-const help = require('./help');
 
-const cli = meow(help, {
+// document format follow http:docopt.org
+const cli = meow(`
+  Usage:
+    $ json-parse [options] <path>
+
+  Options:
+    -h --help     Show this screen.
+    -v --version  Show version.
+    -i --indent   Indent length (only work with --format=json).
+    -f --format   Format, either object or json [default: object].
+
+  Examples:
+    $ json-parse foo.log
+    $ json-parse --format=json foo.log
+    $ json-parse --format=json --indent=4 foo.log
+    $ cat foo.log | json-parse -f json -i 4
+    $ echo '{"name": "akccakcctw"}' | json-parse
+`, {
   flags: {
     help: {
       type: 'boolean',
