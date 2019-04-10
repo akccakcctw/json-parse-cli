@@ -3,23 +3,9 @@
 const fs = require('fs');
 const stdin = require('get-stdin');
 const meow = require('meow');
+const help = require('./help');
 
-const cli = meow(`
-  Usage
-    $ json-parse <file-path>
-
-  Options
-    -h, --help
-    -v, --version
-    -i, --indent
-    -f, --format object(default) or json
-
-  Example
-    $ json-parse <file-path> --format=json
-    $ json-parse <file-path> --format=json --indent=4
-    $ cat <file-path> | json-parse -f json -i 4
-    $ echo '{"name": "akccakcctw"}' | json-parse
-`, {
+const cli = meow(help, {
   flags: {
     help: {
       type: 'boolean',
