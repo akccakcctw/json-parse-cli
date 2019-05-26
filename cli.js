@@ -83,7 +83,7 @@ if(process.stdin.isTTY) {
         console.log(JSON.stringify(data, replacer, flags.indent));
         process.exit(0);
       }
-      console.log(data);
+      console.dir(data, { depth: null });
       process.exit(0);
     })
     .catch(err => {
@@ -104,7 +104,7 @@ if(process.stdin.isTTY) {
         console.log(JSON.stringify(str, replacer, flags.indent));
         process.exit(0);
       }
-      console.log(JSON5.parse(JSON5.stringify(str, replacer)));
+      console.dir(JSON5.parse(JSON5.stringify(str, replacer)), { depth: null });
       process.exit(0);
     })
     .catch(err => {
