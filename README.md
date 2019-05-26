@@ -5,6 +5,10 @@
 
 > Parse JSON string in your CLI
 
+## Features
+
+- support [JSON5](https://github.com/json5/json5)
+
 ## Install
 
 ```sh
@@ -25,7 +29,7 @@ $ json-parse --help
     -h --help     Show this screen.
     -v --version  Show version.
     -i --indent   Indent length (only work with --format=json).
-    -f --format   Format, either object or json [default: object].
+    -f --format   Format, object|json|json5 [default: object].
 
   Examples:
     $ json-parse foo.log

@@ -3,6 +3,7 @@
 const fs = require('fs');
 const stdin = require('get-stdin');
 const meow = require('meow');
+const JSON5 = require('json5');
 
 // document format follow http:docopt.org
 const cli = meow(`
@@ -52,7 +53,7 @@ const replacer = (key, val) => {
 
   try {
     return (typeof val === 'string' && regex.test(val))
-      ? replacer(key, JSON.parse(val))
+      ? replacer(key, JSON5.parse(val))
       : val;
   } catch (err) {
     return val;
@@ -61,15 +62,23 @@ const replacer = (key, val) => {
 
 const parseFromFile = async ({ file = '' }) => {
   const raw = await fs.readFileSync(file, 'utf8');
-  return JSON.parse(JSON.stringify(raw, replacer));
+  return JSON5.parse(JSON5.stringify(raw, replacer));
 };
 
 if(process.stdin.isTTY) {
   if(!filePath) {
     cli.showHelp();
+    process.exit(1);
   }
   parseFromFile({ file: filePath })
     .then(data => {
+      if(flags.format === 'json5') {
+        console.log(JSON5.stringify(data, {
+          replacer,
+          space: flags.indent,
+        }));
+        process.exit(0);
+      }
       if(flags.format === 'json') {
         console.log(JSON.stringify(data, replacer, flags.indent));
         process.exit(0);
@@ -84,11 +93,18 @@ if(process.stdin.isTTY) {
 } else {
   stdin()
     .then(str => {
+      if(flags.format === 'json5') {
+        console.log(JSON5.stringify(str, {
+          replacer,
+          space: flags.indent,
+        }));
+        process.exit(0);
+      }
       if(flags.format === 'json') {
         console.log(JSON.stringify(str, replacer, flags.indent));
         process.exit(0);
       }
-      console.log(JSON.parse(JSON.stringify(str, replacer)));
+      console.log(JSON5.parse(JSON5.stringify(str, replacer)));
       process.exit(0);
     })
     .catch(err => {
