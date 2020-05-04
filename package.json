@@ -23,6 +23,6 @@
   "dependencies": {
     "get-stdin": "^6.0.0",
     "json5": "^2.1.0",
-    "meow": "^5.0.0"
+    "meow": "^6.1.1"
   }
 }
