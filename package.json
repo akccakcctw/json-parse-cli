@@ -21,7 +21,7 @@
   },
   "repository": "akccakcctw/json-parse-cli",
   "dependencies": {
-    "get-stdin": "^6.0.0",
+    "get-stdin": "^9.0.0",
     "json5": "^2.1.0",
     "meow": "^5.0.0"
   }
