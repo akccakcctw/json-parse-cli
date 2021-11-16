@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const stdin = require('get-stdin');
-const meow = require('meow');
-const JSON5 = require('json5');
+import fs from 'fs';
+import stdin from 'get-stdin';
+import meow from 'meow';
+import JSON5 from 'json5';
 
 // document format follow http:docopt.org
 const cli = meow(`
@@ -23,6 +23,7 @@ const cli = meow(`
     $ cat foo.log | json-parse -f json -i 4
     $ echo '{"name": "akccakcctw"}' | json-parse
 `, {
+  importMeta: import.meta,
   flags: {
     help: {
       type: 'boolean',

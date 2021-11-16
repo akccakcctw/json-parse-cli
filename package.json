@@ -3,6 +3,10 @@
   "version": "0.3.0",
   "description": "parse JSON file more easily",
   "author": "RexTsou <akccakccwww@gmail.com>",
+  "type": "module",
+  "engines": {
+    "node": ">=12.17"
+  },
   "license": "MIT",
   "keywords": [
     "json",
@@ -22,7 +26,7 @@
   "repository": "akccakcctw/json-parse-cli",
   "dependencies": {
     "get-stdin": "^6.0.0",
-    "json5": "^2.1.0",
-    "meow": "^5.0.0"
+    "json5": "^2.2.0",
+    "meow": "^10.1.1"
   }
 }
