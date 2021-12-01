@@ -2,6 +2,7 @@
 
 ![NPM-downloads](https://img.shields.io/npm/dt/json-parse-cli.svg)
 ![LICENSE](https://img.shields.io/github/license/akccakcctw/json-parse-cli.svg)
+[![semantic-release](https://img.shields.io/badge/semantic-release-e10079.svg?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
 > Parse JSON string in your CLI
 
