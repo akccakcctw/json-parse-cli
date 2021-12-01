@@ -24,10 +24,11 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx \
-          -p @semantic-release/changelog \
-          -p @semantic-release/git \
-          -p @semantic-release/github \
-          -p @semantic-release/release-notes-generator \
-          -p semantic-release \
+        run: >
+          npx
+          -p @semantic-release/changelog
+          -p @semantic-release/git
+          -p @semantic-release/github
+          -p @semantic-release/release-notes-generator
+          -p semantic-release
           semantic-release
