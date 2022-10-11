@@ -30,6 +30,6 @@
   "dependencies": {
     "get-stdin": "^6.0.0",
     "json5": "^2.2.0",
-    "meow": "^10.1.1"
+    "meow": "^11.0.0"
   }
 }
