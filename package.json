@@ -1,6 +1,6 @@
 {
   "name": "json-parse-cli",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "parse JSON file more easily",
   "author": "RexTsou <akccakccwww@gmail.com>",
   "type": "module",
