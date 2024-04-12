@@ -2,6 +2,7 @@
 *.bak
 *.DS_Store
 [Tt]humbs.db
+.aider*
 
 # Logs
 logs
