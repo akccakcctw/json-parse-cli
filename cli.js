@@ -27,20 +27,20 @@ const cli = meow(`
   flags: {
     help: {
       type: 'boolean',
-      alias: 'h',
+      shortFlag: 'h',
     },
     version: {
       type: 'boolean',
-      alias: 'v',
+      shortFlag: 'v',
     },
     indent: {
       type: 'number',
-      alias: 'i',
+      shortFlag: 'i',
       default: 2,
     },
     format: {
       type: 'string',
-      alias: 'f',
+      shortFlag: 'f',
       default: 'object',
     },
   },

@@ -28,14 +28,13 @@
     "url": "https://github.com/akccakcctw/json-parse-cli.git"
   },
   "dependencies": {
-    "get-stdin": "^6.0.0",
-    "json5": "^2.2.0",
-    "meow": "^10.1.1",
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0"
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "get-stdin": "^9.0.0",
+    "json5": "^2.2.3",
+    "meow": "^13.2.0"
   },
   "devDependencies": {
-    "jest": "^28.1.0",
-    "pnpm": "^7.1.7"
+    "jest": "^29.7.0"
   }
 }
